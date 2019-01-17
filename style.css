@@ -1,0 +1,369 @@
+@font-face {
+    font-family: 'runescape';
+    src: url('fonts/runescape_uf.woff');
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'runescape';
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+}
+
+
+body {
+    background: black;
+    margin: 0px;
+    height: 100%;
+}
+
+
+/* SCROLL BAR STYLE */
+/* width */
+/* ::-webkit-scrollbar */
+/* Track */
+/* ::-webkit-scrollbar-track */
+/* Handle */
+/* ::-webkit-scrollbar-thumb */
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover */
+/* width */
+
+
+
+/* GLOBAL STYLES */
+.disableSelection {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+}
+
+.show {
+    display: initial;
+}
+.hide {
+    display: none;
+}
+
+
+
+#game-container {
+    position: relative;
+    margin: auto;
+    margin-top: 5%;
+    width: fit-content;
+    height: fit-content;
+}
+
+#gameplay-screen {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 506px;
+    height: 326px;
+    z-index: 2;
+}
+
+#minimap-container {
+    position: absolute;
+    top: 0px;
+    left: 519px;
+    width: 246px;
+    height: 168px;
+    z-index: -1;
+}
+
+#sidebar-container {
+    position: absolute;
+    top: 168px;
+    left: 519px;
+    width: 246px;
+    height: 335px;
+}
+
+#sidebar {
+    margin-left: 3px;
+    margin-right: 2px;
+    width: 241px;
+    height: 335px;
+}
+
+
+    /* TOP MENU BAR */
+#top-menubar {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+}
+#combat-tab, #skills-tab, #quests-tab, #inventory-tab, #equipment-tab, #prayer-tab, #magic-tab {
+    float: left;
+    height: 36px;
+}#skills-tab, #quests-tab, #inventory-tab, #equipment-tab, #prayer-tab {
+    width: 33px;
+}#combat-tab, #magic-tab {
+    width: 38px;
+}#combat-tab {
+    background: url("images/Tab Sprites.png") 0 0;
+}#skills-tab {
+    background: url("images/Tab Sprites.png") -38px 0;
+}#quests-tab {
+    background: url("images/Tab Sprites.png") -71px 0;
+}#inventory-tab {
+    background: url("images/Tab Sprites.png") -104px 0;
+}#equipment-tab {
+    background: url("images/Tab Sprites.png") -137px 0;
+}#prayer-tab {
+    background: url("images/Tab Sprites.png") -170px 0;
+}#magic-tab {
+    background: url("images/Tab Sprites.png") -203px 0;
+}
+
+
+    /* SIDE PANEL */
+#sidebar-panel {
+    position: absolute;
+    top: 36px;
+    left: 30px;
+    width: 186px;
+    height: 262px;
+}
+.side-panel {
+    position: absolute;
+    width: 186px;
+    height: 262px;
+}
+
+
+    /* SKILLS MENU */
+#skills-panel {
+    padding-top: 2px;
+    width: inherit;
+    height: inherit;
+}
+.skill {
+    float: left;
+    width: 62px;
+    height:32px;
+}
+.totalLevel {
+    float: left;
+    width: 62px;
+    height:32px;
+}
+/* .members {
+    
+} */
+.locked {
+    opacity: .35;
+    /* pointer-events: none; */
+}
+.locked .overlay {
+    display: none;
+}
+
+/* Highlight skills on click */
+.overlay {
+    opacity: 0;
+}
+.overlay .selected {
+    opacity: 0.1;
+}
+/* .overlay:hover {
+    opacity: 0.1;
+} */
+
+.effLevel, .level {
+    position: relative;
+    background: green;
+    font-family: runescape;
+    color: rgb(255, 255, 0);
+    top: 15px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+}
+
+
+    /* GAMEPLAY SCREEN */
+.screen {
+    /* background: url("screen background.png") 0 0; */
+    background: url("images/skill page.png") 0 0;
+    position: absolute;
+    width: 506px;
+    height: 326px;
+}
+#exit-button {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    top: 7px;
+    right: 7px;
+    z-index: 2;
+}
+#exit-button:active {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+#exp-bar {
+    top: 61px;
+    height: 8px;
+}
+#progress-bar {
+    top: 73px;
+    height: 3px;
+}
+#exp-bar, #progress-bar {
+    position: absolute;
+    background: black;
+    left: 26px;
+    width: 452px;
+    padding: 1px;
+    box-shadow: inset 1px 1px #383023, inset -1px -1px #5A5245;
+}
+#level-display, #exp-display {
+    position: absolute;
+    float: left;
+}
+#current-exp, #current-progress {
+    width: 0%;
+    height: 100%;
+}
+#current-exp {
+    background: rgb(255, 255, 0);
+    box-shadow: inset 1px 1px rgb(255, 255, 175), inset -1px -1px rgb(200, 200, 0);
+}
+#current-progress {
+    background: rgb(255, 155, 0);
+    box-shadow: inset 1px 1px rgb(255, 175, 100), inset -1px -1px rgb(230, 125, 0);
+}
+
+
+
+    /* ACTION BUTTONS */
+#action-menu-title {
+    position: absolute;
+    color: rgb(255, 155, 0);
+    top: 98px;
+    left: 83px;
+    text-shadow: 1px 1px black;
+}
+#action-button-border {
+    position: absolute;
+    height: 190px;
+    top: 116px;
+    left: 27px;
+    padding: 2px;
+    padding-top: 2px;
+    padding-right: 3px;
+    box-shadow: inset -1px -1px rgb(90, 82, 69), inset 1px 1px rgb(56, 48, 35);
+}
+#action-button-container {
+    height: 191px;
+    overflow: auto;
+}
+.action-button {
+    position: relative;
+    background-color: rgb(100, 85, 70);
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: inset -1px -1px rgb(65, 48, 57), inset 1px 1px rgb(126, 111, 92), inset -2px -2px rgb(72, 65, 54), inset 2px 2px rgb(103, 96, 77);
+    margin-top: none;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(255, 155, 0);
+    text-shadow: 1px 1px black;
+    cursor: pointer;
+    text-align: center;
+}
+.action-button.enabled {
+    /* Button lighting with sharp corners */
+    box-shadow: inset -1px 0px rgb(65, 48, 57), inset 0px -1px rgb(65, 48, 57), inset 1px 0px rgb(126, 111, 92), inset 0px 1px rgb(126, 111, 92), inset -2px 0px rgb(72, 65, 54), inset 0px -2px rgb(72, 65, 54), inset 2px 0px rgb(103, 96, 77), inset 0px 2px rgb(103, 96, 77);
+}
+.action-button.disabled {
+    box-shadow: inset -1px 0px rgb(126, 111, 92), inset 0px -1px rgb(126, 111, 92), inset 1px 0px rgb(65, 48, 57), inset 0px 1px rgb(65, 48, 57), inset -2px 0px rgb(103, 96, 77), inset 0px -2px rgb(103, 96, 77), inset 2px 0px rgb(72, 65, 54), inset 0px 2px rgb(72, 65, 54);
+    opacity: 0.5;
+    cursor: auto;
+}
+.action-button.enabled:hover {
+    filter: brightness(1.15);
+}
+.action-button.enabled:active {
+    box-shadow: inset -1px 0px rgb(126, 111, 92), inset 0px -1px rgb(126, 111, 92), inset 1px 0px rgb(65, 48, 57), inset 0px 1px rgb(65, 48, 57), inset -2px 0px rgb(103, 96, 77), inset 0px -2px rgb(103, 96, 77), inset 2px 0px rgb(72, 65, 54), inset 0px 2px rgb(72, 65, 54);
+    /* Translates text within the button */
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-left: 11px;
+    padding-right: 9px;
+}
+/* SCROLLBAR width */
+#action-button-container::-webkit-scrollbar {
+    width: 3px;
+}
+/* Track */
+#action-button-container::-webkit-scrollbar-track {
+  background: #222; 
+  border-radius: 2px;
+  background-color: transparent;
+}
+/* Handle */
+#action-button-container::-webkit-scrollbar-thumb {
+  background: #777; 
+  border-radius: 2px;
+}
+/* Handle on hover */
+#action-button-container::-webkit-scrollbar-thumb:hover {
+  background: #888; 
+}
+/* Show/Hide Display */
+.action-plate.show {
+    display: block;
+}
+.action-plate.hide {
+    display: none;
+}
+
+
+    /* LEVEL & EXP DISPLAY */
+
+#level-display div, #exp-display div {
+    float: left;
+    color: rgb(255, 255, 0);
+    text-shadow: 1px 1px black;
+}
+#level-display {
+    top: 44px;
+    left: 29px;
+}
+#level {
+    margin-left: 2px;
+}
+#exp-display {
+    top: 44px;
+    left: 477px;
+    transform: translate(-100%, 0%);
+    width: fit-content;
+}
+#exp-points {
+    margin-right: 1px;
+}
+#nextLvlExp {
+    margin-left: 1px;
+}

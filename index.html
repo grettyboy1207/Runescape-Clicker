@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Welcome to RunEscape Clicker!" />
+  <meta name="keywords" content="Run, Escape, RunEscape, Incremental, Clicker, Game" />
+  <meta name="author" content="Joe Gretton" />
+  <title>RunEscape Clicker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container"><img src="images/GUI.png" draggable="false"></img>
+        <div id="gameplay-screen">
+            <div id="skill-screen-container" class="hide">
+
+                <div id="screen-border"></div>
+                <img id="exit-button" src="images/X button.png" draggable="false"></img>
+
+                <div id="attack" class="screen hide"></div>
+                <div id="hitpoints" class="screen hide"></div>
+                <div id="mining" class="screen hide"></div>
+                <div id="strength" class="screen hide"></div>
+                <div id="agility" class="screen hide"></div>
+                <div id="smithing" class="screen hide"></div>
+                <div id="defence" class="screen hide"></div>
+                <div id="herblore" class="screen hide"></div>
+                <div id="fishing" class="screen hide"></div>
+                <div id="ranged" class="screen hide"></div>
+                <div id="thieving" class="screen hide"></div>
+                <div id="cooking" class="screen hide"></div>
+                <div id="prayer" class="screen hide"></div>
+                <div id="crafting" class="screen hide"></div>
+                <div id="firemaking" class="screen hide"></div>
+                <div id="magic" class="screen hide"></div>
+                <div id="fletching" class="screen hide"></div>
+                <div id="woodcutting" class="screen hide"></div>
+                <div id="runecraft" class="screen hide"></div>
+                <div id="slayer" class="screen hide"></div>
+                <div id="farming" class="screen hide"></div>
+                <div id="construction" class="screen hide"></div>
+                <div id="hunter" class="screen hide"></div>
+
+                <!--EXP and Progress bar display-->
+                <div id="level-display">
+                    <div>lvl:</div>
+                    <div id="level">3</div>
+                </div>
+                <div id="exp-display">
+                    <div id="exp-points">0</div>
+                    <div> / </div>
+                    <div id="nextLvlExp">0</div>
+                    <div>xp</div>
+                </div>
+                
+                <div id="exp-bar">
+                    <div id="current-exp"></div>
+                </div>
+                <div id="progress-bar">
+                    <div id="current-progress"></div>
+                </div>
+                <div id="action-menu-container">
+                    <div id="action-menu-title">Mine</div>
+                    <div id="action-button-border">
+                        <div id="action-button-container">
+                            <div id="clay" class="action-plate show">
+                                <div class="action-button enabled">Clay</div>
+                            </div>
+                            <div id="copper" class="action-plate show">
+                                <div class="action-button enabled">Copper Ore</div>
+                            </div>
+                            <div id="tin" class="action-plate show">
+                                <div class="action-button disabled">Tin Ore</div>
+                            </div>
+                            <div id="runeEssence" class="action-plate show">
+                                <div class="action-button enabled">Rune Essence</div>
+                            </div>
+                            <div id="blurite" class="action-plate show">
+                                <div class="action-button enabled">Blurite Ore</div>
+                            </div>
+                            <div id="limestone" class="action-plate show">
+                                <div class="action-button disabled">Limestone</div>
+                            </div>
+                            <div id="iron" class="action-plate show">
+                                <div class="action-button enabled">Iron Ore</div>
+                            </div>
+                            <div id="silver" class="action-plate show">
+                                <div class="action-button enabled">Silver Ore</div>
+                            </div>
+                            <div id="elemental" class="action-plate show">
+                                <div class="action-button disabled">Elemental Ore</div>
+                            </div>
+                            <div id="daeyalt" class="action-plate show">
+                                <div class="action-button enabled">Daeyalt Ore</div>
+                            </div>
+                            <div id="volcanicAsh" class="action-plate show">
+                                <div class="action-button enabled">Copper Ore</div>
+                            </div>
+                            <div id="coal" class="action-plate show">
+                                <div class="action-button disabled">Coal</div>
+                            </div>
+                            <div id="pureEssence" class="action-plate show">
+                                <div class="action-button enabled">Pure Essence</div>
+                            </div>
+                            <div id="payDirt" class="action-plate show">
+                                <div class="action-button enabled">Pay-Dirt</div>
+                            </div>
+                            <div id="sandstone" class="action-plate show">
+                                <div class="action-button disabled">Sandstone</div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        <div id="minimap-container"></div>
+        <div id="sidebar-container">
+            <div id="sidebar">
+                <div id="top-menubar">
+                    <div id="combat-tab" class="menu-tab"></div>
+                    <div id="skills-tab" class="menu-tab"></div>
+                    <div id="quests-tab" class="menu-tab"></div>
+                    <div id="inventory-tab" class="menu-tab"></div>
+                    <div id="equipment-tab" class="menu-tab"></div>
+                    <div id="prayer-tab" class="menu-tab"></div>
+                    <div id="magic-tab" class="menu-tab"></div>
+                </div>
+                <div id="sidebar-panel">
+                    <!-- COMBAT PANEL -->
+                    <div id="combat-panel" class="side-panel"></div>
+
+                    <!-- SKILLS PANEL -->
+                    <div id="skills-panel" class="side-panel">
+                        <!-- <img src="Skills Base Page.png"></img> -->
+                        <div>
+                            <div id="attack" class="skill">
+                                <div id="levels-container">
+                                    <img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img>
+                                    <div class="effLevel"></div>
+                                    <div class="level"></div>
+                                </div>
+                            </div>
+                            <div id="hitpoints" class="skill">
+                                <div id="levels-container">
+                                    <img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img>
+                                    <div class="effLevel"></div>
+                                    <div class="level"></div>
+                                </div>
+                            </div>
+                            <div id="mining" class="skill">
+                                <div id="levels-container">
+                                    <img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img>
+                                    <div class="effLevel"></div>
+                                    <div class="level"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="strength" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="agility" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="smithing" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                        </div>
+                        <div>
+                            <div id="defence" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="herblore" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="fishing" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                        </div>
+                        <div>
+                            <div id="ranged" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="thieving" class="skill members locked"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="cooking" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                        </div>
+                        <div>
+                            <div id="prayer" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="crafting" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="firemaking" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                        </div>
+                        <div>
+                            <div id="magic" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="fletching" class="skill members locked"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="woodcutting" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                        </div>
+                        <div>
+                            <div id="runecraft" class="skill"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="slayer" class="skill members locked"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="farming" class="skill members locked"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                        </div>
+                        <div>
+                            <div id="construction" class="skill members locked"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="hunter" class="skill members locked"><img class="overlay disableSelection" src="images/Skill Overlay.png" draggable="false"></img></div>
+                            <div id="totalLevel" class="totalLevel"></div>
+                        </div>
+                    </div>
+                    <div id="quests-panel" class="side-panel"></div>
+                    <div id="inventory-panel" class="side-panel"></div>
+                    <div id="equipment-panel" class="side-panel"></div>
+                    <div id="prayer-panel" class="side-panel"></div>
+                    <div id="magic-panel" class="side-panel"></div>
+                </div>
+                <div id="bottom-menubar">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <!-- do this -->
+        <div id="overlayTing" style="background: white; opacity: 0.5; margin: 0px;"></div>
+    </div>
+    <script src="helpers.js"></script>
+    <script src="Driver.js"></script>
+    <script src="view.js"></script>
+    <script src="clickResponses.js"></script>
+    <script src="saving.js"></script>
+    <script src="scripts.js"></script>
+    <script src="skills.js"></script>
+    
+    <script>startGame()</script>
+    
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+INVENTORY
+    Side tabs for different materials
+
+MISC
+    auto sell upgrade (maybe after member rebirth) and set minimum values to keep/not sell
